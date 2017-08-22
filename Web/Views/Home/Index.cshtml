@@ -1,0 +1,13 @@
+﻿@model List<Web.Models.Image>
+ 
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var num = 2;
+}
+
+
+@foreach (var image in Model)
+{
+    <img src="@image.Url" alt="@image.Alt" />
+}
+
