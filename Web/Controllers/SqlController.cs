@@ -8,12 +8,12 @@ using System.Web.Mvc;
 
 namespace Web.Controllers
 {
-    //
     public class SqlController : Controller
     {
         // GET: Sql
         public string Index()
         {
+
             var connStr = ConfigurationManager.ConnectionStrings["default"].ConnectionString;
             var conn = new SqlConnection(connStr);
             conn.Open();

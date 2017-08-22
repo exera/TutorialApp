@@ -33,8 +33,6 @@ namespace Web.Controllers
                 }
             }
 
-
-
             return View(images);
         }
 
