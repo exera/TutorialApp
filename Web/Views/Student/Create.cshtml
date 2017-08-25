@@ -1,0 +1,35 @@
+﻿@model Web.Models.Student
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <h2>Öğrenci Ekle</h2>
+        <div class="col-md-4">
+            <form method="post">
+                <div class="form-group">
+                    <label for="FirstName">Ad</label>
+                    <input type="text" class="form-control" id="FirstName" name="FirstName" value="@(Model != null ? Model.FirstName : "")">
+                </div>
+                <div class="form-group">
+                    <label for="LastName">Soyad</label>
+                    <input type="text" class="form-control" id="LastName" name="LastName" value="@(Model != null ? Model.LastName : "")">
+                </div>
+                <div class="form-group">
+                    <label for="Age">Yaş</label>
+                    <input type="number" class="form-control" id="Age" name="Age" value="@(Model != null ? Model.Age : (int?)null)">
+                </div>
+                <div class="form-group">
+                    <label for="GPA">GPA</label>
+                    <input type="number" class="form-control" id="GPA" name="GPA" value="@(Model != null ? Model.GPA : (int?)null)">
+                </div>
+
+                <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-floppy-disk"></i>Kaydet</button>
+            </form>
+        </div>
+    </div>
+</div>

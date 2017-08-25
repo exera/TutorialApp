@@ -110,16 +110,6 @@
     <Content Include="Contents\js\index.js" />
     <Content Include="Contents\js\npm.js" />
     <Content Include="Global.asax" />
-    <Content Include="Models\Test.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Test.edmx</DependentUpon>
-      <LastGenOutput>Test.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Test.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Test.edmx</DependentUpon>
-      <LastGenOutput>Test.cs</LastGenOutput>
-    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -128,28 +118,24 @@
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SqlController.cs" />
+    <Compile Include="Migrations\201708241252592_InitialCreate.cs" />
+    <Compile Include="Migrations\201708241252592_InitialCreate.Designer.cs">
+      <DependentUpon>201708241252592_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241339238_StudentModelAdded.cs" />
+    <Compile Include="Migrations\201708241339238_StudentModelAdded.Designer.cs">
+      <DependentUpon>201708241339238_StudentModelAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Student.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Employee.cs">
-      <DependentUpon>Test.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Image.cs" />
-    <Compile Include="Models\Test.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Test.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Test.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Test.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Test.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Test.edmx</DependentUpon>
-    </Compile>
+    <Compile Include="Models\TutorialAppContext.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -159,13 +145,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_PartialHeader.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <EntityDeploy Include="Models\Test.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Test.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Test.edmx.diagram">
-      <DependentUpon>Test.edmx</DependentUpon>
-    </Content>
     <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Contents\css\bootstrap-theme.css.map" />
     <Content Include="Contents\css\bootstrap-theme.min.css.map" />
@@ -175,6 +154,8 @@
     <Content Include="Contents\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Contents\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Contents\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Views\Student\Index.cshtml" />
+    <Content Include="Views\Student\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -190,6 +171,14 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201708241252592_InitialCreate.resx">
+      <DependentUpon>201708241252592_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241339238_StudentModelAdded.resx">
+      <DependentUpon>201708241339238_StudentModelAdded.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,6 +1,6 @@
-﻿@model IEnumerable<Web.Models.Employee>
+﻿@model IEnumerable<Web.Models.Student>
 @{
-    ViewBag.Title = "Employee list";
+    ViewBag.Title = "Student list";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -10,7 +10,7 @@
             <th>Id</th>
             <th>Name</th>
             <th>Age</th>
-            <th>User.UserName</th>
+            <th>GPA</th>
         </tr>
     </thead>
     <tbody>
@@ -20,7 +20,7 @@
                 <td>@employee.Id</td>
                 <td>@employee.FirstName @employee.LastName</td>
                 <td>@employee.Age</td>
-                <td>@employee.User.UserName</td>
+                <td>@(employee.GPA ?? 0)</td>
             </tr>
         }
     </tbody>

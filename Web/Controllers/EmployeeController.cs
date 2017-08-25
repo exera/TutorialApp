@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -12,9 +13,9 @@ namespace Web.Controllers
         // GET: Employee
         public ActionResult Index()
         {
-            var db = new TutorialAppRE();
-            var results = db.Employee.ToList();
-
+            var db = new TutorialAppContext();
+            var results = db.Employees.Include("User").ToList();
+            
             return View(results);
         }
     }
