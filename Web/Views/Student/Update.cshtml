@@ -1,14 +1,14 @@
 ﻿@model Web.Models.Student
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Update";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
 <div class="container">
     <div class="row">
-        <h2>Öğrenci Ekle</h2>
+        <h2>Öğrenci Güncelle</h2>
         <div class="col-md-4">
             <form method="post">
                 <div class="form-group">
@@ -26,13 +26,13 @@
                     @Html.EditorFor(m => m.Age, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(m => m.Age)
                     @*@{ var ms = ViewContext.ViewData.ModelState["Age"]; }
-                    @if (ms != null && ms.Errors.Count > 0)
-                    {
-                        foreach (var e in ms.Errors)
+                        @if (ms != null && ms.Errors.Count > 0)
                         {
-                            <span class="help-block">@e.ErrorMessage</span>
-                        }
-                    }*@
+                            foreach (var e in ms.Errors)
+                            {
+                                <span class="help-block">@e.ErrorMessage</span>
+                            }
+                        }*@
                 </div>
                 <div class="form-group">
                     <label for="GPA">GPA</label>
@@ -40,7 +40,14 @@
                     @Html.ValidationMessageFor(m => m.GPA)
                 </div>
 
+                
                 <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-floppy-disk"></i>Kaydet</button>
+                @if (IsPost && ViewData.ModelState.IsValid)
+                {
+                    <span class="text-success">
+                        <i class="glyphicon glyphicon-ok-circle"></i> Kaydedildi
+                    </span>
+                }
             </form>
         </div>
     </div>

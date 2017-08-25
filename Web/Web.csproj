@@ -108,6 +108,9 @@
     <Content Include="Contents\js\bootstrap.js" />
     <Content Include="Contents\js\bootstrap.min.js" />
     <Content Include="Contents\js\index.js" />
+    <Content Include="Contents\js\jquery-3.2.1.min.js" />
+    <Content Include="Contents\js\jquery.validate.min.js" />
+    <Content Include="Contents\js\jquery.validate.unobtrusive.min.js" />
     <Content Include="Contents\js\npm.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -125,6 +128,10 @@
     <Compile Include="Migrations\201708241339238_StudentModelAdded.cs" />
     <Compile Include="Migrations\201708241339238_StudentModelAdded.Designer.cs">
       <DependentUpon>201708241339238_StudentModelAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708251301403_StudentNameFieldsRequired.cs" />
+    <Compile Include="Migrations\201708251301403_StudentNameFieldsRequired.Designer.cs">
+      <DependentUpon>201708251301403_StudentNameFieldsRequired.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Student.cs" />
@@ -156,6 +163,7 @@
     <Content Include="Contents\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Views\Student\Index.cshtml" />
     <Content Include="Views\Student\Create.cshtml" />
+    <Content Include="Views\Student\Update.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -178,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708241339238_StudentModelAdded.resx">
       <DependentUpon>201708241339238_StudentModelAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708251301403_StudentNameFieldsRequired.resx">
+      <DependentUpon>201708251301403_StudentNameFieldsRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
