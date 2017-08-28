@@ -17,5 +17,11 @@ namespace Web.Models
         [Range(20, double.PositiveInfinity,ErrorMessage ="Yaş en az 20 olmalıdır.")]
         public int Age { get; set; }
         public double? GPA { get; set; }
+        public int? CityId { get; set; }
+        public virtual City City { get; set; }
+        public int? DistrictId { get; set; }
+        public virtual District District { get; set; }
+        public string AddressLine1 { get; set; }
+        public virtual ICollection<Exam> Exams { get; set; }
     }
 }

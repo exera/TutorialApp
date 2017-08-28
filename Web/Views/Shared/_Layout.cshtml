@@ -7,7 +7,7 @@
 
     <link href="~/Contents/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Contents/css/index.css" rel="stylesheet" />
-
+    @RenderSection("styles",false)
     
 </head>
 <body>
@@ -21,5 +21,6 @@
     <script src="~/Contents/js/jquery.validate.unobtrusive.min.js"></script>
     <script src="~/Contents/js/bootstrap.min.js"></script>
     <script src="~/Contents/js/index.js"></script>
+    @RenderSection("scripts",false)
 </body>
 </html>

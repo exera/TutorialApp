@@ -34,6 +34,9 @@
                         <a class="btn btn-xs btn-primary" href="@Url.Action("update", "student", new { id = student.Id })">
                             <i class="glyphicon glyphicon-pencil"></i>
                         </a>
+                        <a class="btn btn-xs btn-danger" href="@Url.Action("deleteconfirm", "student", new { id = student.Id })">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </a>
                     </td>
                 </tr>
             }

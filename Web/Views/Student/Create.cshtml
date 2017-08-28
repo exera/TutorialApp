@@ -5,12 +5,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
 <div class="container">
     <div class="row">
         <h2>Öğrenci Ekle</h2>
         <div class="col-md-4">
-            <form method="post">
+            <form id="student-form" method="post">
                 <div class="form-group">
                     <label for="FirstName">Ad</label>
                     @Html.EditorFor(m => m.FirstName, new { htmlAttributes = new { @class = "form-control" } })
@@ -26,13 +25,13 @@
                     @Html.EditorFor(m => m.Age, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(m => m.Age)
                     @*@{ var ms = ViewContext.ViewData.ModelState["Age"]; }
-                    @if (ms != null && ms.Errors.Count > 0)
-                    {
-                        foreach (var e in ms.Errors)
+                        @if (ms != null && ms.Errors.Count > 0)
                         {
-                            <span class="help-block">@e.ErrorMessage</span>
-                        }
-                    }*@
+                            foreach (var e in ms.Errors)
+                            {
+                                <span class="help-block">@e.ErrorMessage</span>
+                            }
+                        }*@
                 </div>
                 <div class="form-group">
                     <label for="GPA">GPA</label>
@@ -40,8 +39,39 @@
                     @Html.ValidationMessageFor(m => m.GPA)
                 </div>
 
-                <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-floppy-disk"></i>Kaydet</button>
+                <div class="form-group">
+                    <label for="CityId">İl</label>
+                    <select name="CityId" id="CityId" class="form-control">
+                        <option>--Seçiniz--</option>
+                    </select>
+                    @Html.ValidationMessageFor(m => m.CityId)
+                </div>
+
+
+                <div class="form-group">
+                    <label for="DistrictId">İlçe</label>
+                    <select name="DistrictId" id="DistrictId" class="form-control">
+                        <option>--Seçiniz--</option>
+                    </select>
+                    @Html.ValidationMessageFor(m => m.DistrictId)
+                </div>
+
+                <button id="submit" type="submit" class="btn btn-default">
+                    <i class="glyphicon glyphicon-floppy-disk"></i>Kaydet
+                </button>
             </form>
         </div>
     </div>
 </div>
+
+@section styles {
+    <style>
+        body {
+            color: #1c2026;
+        }
+    </style>
+}
+
+@section scripts{
+    <script src="~/Contents/js/views/student/create.js"></script>
+}

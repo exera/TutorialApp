@@ -1,0 +1,25 @@
+﻿@model Web.Models.Student
+@{
+    ViewBag.Title = "Öğrenci Sil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2>@Model.FirstName @Model.LastName adlı ögrenciyi silmek istediğinize emin misiniz?</h2>
+    <dl class="dl-horizontal">
+        <dt>Ad</dt>
+        <dd>@Model.FirstName</dd>
+        <dt>Soyad</dt>
+        <dd>@Model.LastName</dd>
+        <dt>Age</dt>
+        <dd>@Model.Age</dd>
+        <dt>GPA</dt>
+        <dd>@Model.GPA</dd>
+    </dl>
+    <form action="@Url.Action("delete","student",new { id=Model.Id})" method="post">
+        <button type="submit" class="btn btn-danger">
+            <i class="glyphicon glyphicon-trash"></i> Sil
+        </button>
+    </form>
+</div>
+

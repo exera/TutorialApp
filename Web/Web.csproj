@@ -112,6 +112,7 @@
     <Content Include="Contents\js\jquery.validate.min.js" />
     <Content Include="Contents\js\jquery.validate.unobtrusive.min.js" />
     <Content Include="Contents\js\npm.js" />
+    <Content Include="Contents\js\views\student\create.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -119,7 +120,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ComputerController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\ExamController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LookupController.cs" />
     <Compile Include="Controllers\SqlController.cs" />
     <Compile Include="Migrations\201708241252592_InitialCreate.cs" />
     <Compile Include="Migrations\201708241252592_InitialCreate.Designer.cs">
@@ -133,7 +136,22 @@
     <Compile Include="Migrations\201708251301403_StudentNameFieldsRequired.Designer.cs">
       <DependentUpon>201708251301403_StudentNameFieldsRequired.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708280930194_ExamModelAdded.cs" />
+    <Compile Include="Migrations\201708280930194_ExamModelAdded.Designer.cs">
+      <DependentUpon>201708280930194_ExamModelAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708281207383_CityDistrictModelsAdded.cs" />
+    <Compile Include="Migrations\201708281207383_CityDistrictModelsAdded.Designer.cs">
+      <DependentUpon>201708281207383_CityDistrictModelsAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708281221363_StudentModelAddressFields.cs" />
+    <Compile Include="Migrations\201708281221363_StudentModelAddressFields.Designer.cs">
+      <DependentUpon>201708281221363_StudentModelAddressFields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\City.cs" />
+    <Compile Include="Models\District.cs" />
+    <Compile Include="Models\Exam.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
@@ -164,6 +182,12 @@
     <Content Include="Views\Student\Index.cshtml" />
     <Content Include="Views\Student\Create.cshtml" />
     <Content Include="Views\Student\Update.cshtml" />
+    <Content Include="Views\Student\DeleteConfirm.cshtml" />
+    <Content Include="Views\Exam\Create.cshtml" />
+    <Content Include="Views\Exam\Delete.cshtml" />
+    <Content Include="Views\Exam\Details.cshtml" />
+    <Content Include="Views\Exam\Edit.cshtml" />
+    <Content Include="Views\Exam\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -175,6 +199,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Views\Contact\" />
     <Folder Include="Views\Image\" />
+    <Folder Include="Views\Lookup\" />
     <Folder Include="Views\Sql\" />
   </ItemGroup>
   <ItemGroup>
@@ -189,6 +214,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708251301403_StudentNameFieldsRequired.resx">
       <DependentUpon>201708251301403_StudentNameFieldsRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708280930194_ExamModelAdded.resx">
+      <DependentUpon>201708280930194_ExamModelAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708281207383_CityDistrictModelsAdded.resx">
+      <DependentUpon>201708281207383_CityDistrictModelsAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708281221363_StudentModelAddressFields.resx">
+      <DependentUpon>201708281221363_StudentModelAddressFields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -37,10 +37,14 @@ namespace Web.Controllers
             {
                 return View(student);
             }
-            
+
             db.Students.Add(student);
             db.SaveChanges();
 
+            if (Request.IsAjaxRequest())
+            {
+                return Json("/student");
+            }
             return RedirectToAction("Index");
         }
 
@@ -48,11 +52,11 @@ namespace Web.Controllers
         public ActionResult Update(int id)
         {
             var student = db.Students.FirstOrDefault(s => s.Id == id);
-            if(student == null)
+            if (student == null)
             {
                 return HttpNotFound();
             }
-            
+
             return View(student);
         }
 
@@ -68,9 +72,38 @@ namespace Web.Controllers
             // bu satır zorunlu
             // yoksa DbContext kaydı güncellemez.
             db.Entry(student).State = System.Data.Entity.EntityState.Modified;
+
             db.SaveChanges();
 
             return View(student);
+        }
+
+        [HttpGet]
+        public ActionResult DeleteConfirm(int id)
+        {
+            var student = db.Students.Find(id);
+            if (student == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(student);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            var student = db.Students.Find(id);
+            if (student == null)
+            {
+                return HttpNotFound();
+            }
+
+            db.Students.Remove(student);
+            //db.Entry(student).State = System.Data.Entity.EntityState.Deleted;
+            db.SaveChanges();
+
+            return RedirectToAction("index");
         }
     }
 }
