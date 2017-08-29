@@ -118,6 +118,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Controllers\ComputerController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\ExamController.cs" />
@@ -188,6 +190,9 @@
     <Content Include="Views\Exam\Details.cshtml" />
     <Content Include="Views\Exam\Edit.cshtml" />
     <Content Include="Views\Exam\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -197,6 +202,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Views\Contact\" />
     <Folder Include="Views\Image\" />
     <Folder Include="Views\Lookup\" />

@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link href="~/Contents/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Contents/css/index.css" rel="stylesheet" />
+    @RenderSection("styles", false)
+
+</head>
+<body>
+    <div>
+        @RenderBody()
+
+
+    </div>
+    <script src="~/Contents/js/jquery-3.2.1.min.js"></script>
+    <script src="~/Contents/js/jquery.validate.min.js"></script>
+    <script src="~/Contents/js/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Contents/js/bootstrap.min.js"></script>
+    <script src="~/Contents/js/index.js"></script>
+    @RenderSection("scripts", false)
+</body>
+</html>
