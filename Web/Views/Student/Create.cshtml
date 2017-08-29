@@ -1,7 +1,7 @@
 ﻿@model Web.Models.Student
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Öğrenci Ekle";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -42,7 +42,7 @@
                 <div class="form-group">
                     <label for="CityId">İl</label>
                     <select name="CityId" id="CityId" class="form-control">
-                        <option>--Seçiniz--</option>
+                        <option>Yükleniyor...</option>
                     </select>
                     @Html.ValidationMessageFor(m => m.CityId)
                 </div>
@@ -54,6 +54,12 @@
                         <option>--Seçiniz--</option>
                     </select>
                     @Html.ValidationMessageFor(m => m.DistrictId)
+                </div>
+
+                <div class="form-group">
+                    <label for="AddressLine1">Adres</label>
+                    @Html.EditorFor(m => m.AddressLine1, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(m => m.AddressLine1)
                 </div>
 
                 <button id="submit" type="submit" class="btn btn-default">

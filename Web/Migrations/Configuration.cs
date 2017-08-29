@@ -1,4 +1,4 @@
-namespace Web.Migrations
+ï»¿namespace Web.Migrations
 {
     using System;
     using System.Data.Entity;
@@ -29,22 +29,22 @@ namespace Web.Migrations
             //
 
             context.Cities.AddOrUpdate(p => p.Name,
-                new Models.City { Name = "Ýstanbul" },
+                new Models.City { Name = "Ä°stanbul" },
                 new Models.City { Name = "Ankara" },
-                new Models.City { Name = "Ýzmir" }
+                new Models.City { Name = "Ä°zmir" }
             );
 
             // while assigning FK
             // use CityId instead of City nav. property
             context.SaveChanges();
             context.Districts.AddOrUpdate(p => p.Name,
-                new Models.District { Name = "Pendik", CityId = context.Cities.FirstOrDefault(c => c.Name == "Ýstanbul").Id },
-                new Models.District { Name = "Kartal", CityId = context.Cities.FirstOrDefault(c => c.Name == "Ýstanbul").Id },
-                new Models.District { Name = "Sancaktepe", CityId = context.Cities.FirstOrDefault(c => c.Name == "Ýstanbul").Id },
-                new Models.District { Name = "Çankaya", CityId = context.Cities.FirstOrDefault(c => c.Name == "Ankara").Id },
+                new Models.District { Name = "Pendik", CityId = context.Cities.FirstOrDefault(c => c.Name == "Ä°stanbul").Id },
+                new Models.District { Name = "Kartal", CityId = context.Cities.FirstOrDefault(c => c.Name == "Ä°stanbul").Id },
+                new Models.District { Name = "Sancaktepe", CityId = context.Cities.FirstOrDefault(c => c.Name == "Ä°stanbul").Id },
+                new Models.District { Name = "Ã‡ankaya", CityId = context.Cities.FirstOrDefault(c => c.Name == "Ankara").Id },
                 new Models.District { Name = "Mamak", CityId = context.Cities.FirstOrDefault(c => c.Name == "Ankara").Id },
-                new Models.District { Name = "Alsancak", CityId = context.Cities.FirstOrDefault(c => c.Name == "Ýzmir").Id },
-                new Models.District { Name = "Seferihisar", CityId = context.Cities.FirstOrDefault(c => c.Name == "Ýzmir").Id }
+                new Models.District { Name = "Alsancak", CityId = context.Cities.FirstOrDefault(c => c.Name == "Ä°zmir").Id },
+                new Models.District { Name = "Seferihisar", CityId = context.Cities.FirstOrDefault(c => c.Name == "Ä°zmir").Id }
             );
         }
         
