@@ -120,11 +120,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ComputerController.cs" />
-    <Compile Include="Controllers\EmployeeController.cs" />
-    <Compile Include="Controllers\ExamController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ExamController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LookupController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LookupController.cs" />
     <Compile Include="Controllers\SqlController.cs" />
     <Compile Include="Migrations\201708241252592_InitialCreate.cs" />
     <Compile Include="Migrations\201708241252592_InitialCreate.Designer.cs">
@@ -154,8 +152,9 @@
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\District.cs" />
     <Compile Include="Models\Exam.cs" />
+    <Compile Include="Models\News.cs" />
     <Compile Include="Models\Student.cs" />
-    <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Areas\Admin\Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -172,7 +171,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_PartialHeader.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Contents\css\bootstrap-theme.css.map" />
     <Content Include="Contents\css\bootstrap-theme.min.css.map" />
     <Content Include="Contents\css\bootstrap.css.map" />
@@ -181,18 +179,19 @@
     <Content Include="Contents\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Contents\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Contents\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Views\Student\Index.cshtml" />
-    <Content Include="Views\Student\Create.cshtml" />
-    <Content Include="Views\Student\Update.cshtml" />
-    <Content Include="Views\Student\DeleteConfirm.cshtml" />
-    <Content Include="Views\Exam\Create.cshtml" />
-    <Content Include="Views\Exam\Delete.cshtml" />
-    <Content Include="Views\Exam\Details.cshtml" />
-    <Content Include="Views\Exam\Edit.cshtml" />
-    <Content Include="Views\Exam\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Student\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Student\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Student\Update.cshtml" />
+    <Content Include="Areas\Admin\Views\Student\DeleteConfirm.cshtml" />
+    <Content Include="Areas\Admin\Views\Exam\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Exam\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Exam\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Exam\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Exam\Index.cshtml" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_PartialHeader.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -203,10 +202,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Views\Contact\" />
-    <Folder Include="Views\Image\" />
-    <Folder Include="Views\Lookup\" />
-    <Folder Include="Views\Sql\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
