@@ -97,6 +97,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Contents\css\bootstrap.min.css" />
+    <Content Include="Areas\Admin\Contents\css\index.css" />
     <Content Include="Contents\css\bootstrap-theme.css" />
     <Content Include="Contents\css\bootstrap-theme.min.css" />
     <Content Include="Contents\css\bootstrap.css" />
@@ -121,6 +123,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\ExamController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LookupController.cs" />
     <Compile Include="Controllers\SqlController.cs" />
@@ -147,6 +150,10 @@
     <Compile Include="Migrations\201708281221363_StudentModelAddressFields.cs" />
     <Compile Include="Migrations\201708281221363_StudentModelAddressFields.Designer.cs">
       <DependentUpon>201708281221363_StudentModelAddressFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709051307280_NewsModelAdded.cs" />
+    <Compile Include="Migrations\201709051307280_NewsModelAdded.Designer.cs">
+      <DependentUpon>201709051307280_NewsModelAdded.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\City.cs" />
@@ -192,6 +199,10 @@
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_PartialHeader.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -224,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708281221363_StudentModelAddressFields.resx">
       <DependentUpon>201708281221363_StudentModelAddressFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709051307280_NewsModelAdded.resx">
+      <DependentUpon>201709051307280_NewsModelAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

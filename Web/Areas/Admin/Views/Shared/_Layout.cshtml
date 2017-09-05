@@ -1,17 +1,21 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var currentController = ViewContext.RouteData.Values["controller"].ToString().ToLowerInvariant();
+}
+
+<!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
 
-    <link href="~/Contents/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/Contents/css/index.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Contents/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Contents/css/index.css" rel="stylesheet" />
     @RenderSection("styles", false)
 
 </head>
 <body>
-    @Html.Partial("_PartialHeader")
+    @Html.Partial("_PartialHeader",currentController)
     <div>
         @RenderBody()
 

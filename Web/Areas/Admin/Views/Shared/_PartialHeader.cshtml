@@ -1,4 +1,6 @@
-﻿<nav class="navbar navbar-inverse navbar-fixed-top">
+﻿@model string
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -14,8 +16,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="@Url.Action("index","student")">Öğrenciler</a></li>
-                <li><a href="@Url.Action("index","exam")">Sınavlar</a></li>
+                <li class="@(Model == "student" ? "active" : "")"><a href="@Url.Action("index","student")">Öğrenciler</a></li>
+                <li class="@(Model == "exam" ? "active" : "")"><a href="@Url.Action("index","exam")">Sınavlar</a></li>
+                <li class="@(Model == "news" ? "active" : "")"><a href="@Url.Action("index","news")">Haberler</a></li>
             </ul>
             <form class="navbar-form navbar-left">
                 <div class="form-group">

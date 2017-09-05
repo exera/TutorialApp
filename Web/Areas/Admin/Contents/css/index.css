@@ -1,0 +1,12 @@
+﻿body {
+    padding-top: 70px;
+}
+
+.img-thumbnail-list {
+    max-width: 160px;
+    max-height: 90px;
+}
+
+.field-validation-error {
+    color: #ff0000;
+}
