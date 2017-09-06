@@ -99,6 +99,7 @@
   <ItemGroup>
     <Content Include="Areas\Admin\Contents\css\bootstrap.min.css" />
     <Content Include="Areas\Admin\Contents\css\index.css" />
+    <Content Include="Areas\Admin\Contents\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Contents\css\bootstrap-theme.css" />
     <Content Include="Contents\css\bootstrap-theme.min.css" />
     <Content Include="Contents\css\bootstrap.css" />
@@ -155,6 +156,10 @@
     <Compile Include="Migrations\201709051307280_NewsModelAdded.Designer.cs">
       <DependentUpon>201709051307280_NewsModelAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709061308099_ImageModelAdded.cs" />
+    <Compile Include="Migrations\201709061308099_ImageModelAdded.Designer.cs">
+      <DependentUpon>201709061308099_ImageModelAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\District.cs" />
@@ -203,6 +208,10 @@
     <Content Include="Areas\Admin\Views\News\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\News\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\News\Index.cshtml" />
+    <Content Include="Areas\Admin\Contents\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Areas\Admin\Contents\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Areas\Admin\Contents\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Areas\Admin\Contents\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -238,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709051307280_NewsModelAdded.resx">
       <DependentUpon>201709051307280_NewsModelAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709061308099_ImageModelAdded.resx">
+      <DependentUpon>201709061308099_ImageModelAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

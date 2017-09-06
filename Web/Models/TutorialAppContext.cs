@@ -19,5 +19,6 @@ namespace Web.Models
         public DbSet<City> Cities { get; set; }
         public DbSet<District> Districts { get; set; }
         public DbSet<News> News { get; set; }
+        public DbSet<Image> Images { get; set; }
     }
 }

@@ -45,7 +45,10 @@
             @Html.DisplayFor(modelItem => item.Date)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Tags)
+            @foreach (var tag in (item.Tags ?? "").Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries))
+            {
+                <span class="label label-primary">@tag</span>
+            }
         </td>
         <td>
             @Html.ActionLink("Düzenle", "Edit", new { id=item.Id }) |

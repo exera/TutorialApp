@@ -32,15 +32,31 @@ namespace Web.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Content,ImageId,Image,Date,Tags,Category,Slug")] News news,HttpPostedFileBase file)
+        public ActionResult Create([Bind(Include = "Id,Title,Content,ImageId,Image,Date,Tags,Category,Slug")] News news, HttpPostedFileBase file)
         {
-            if(file != null && file.ContentLength > 0)
+            if (file != null && file.ContentLength > 0)
             {
                 var ext = Path.GetExtension(file.FileName);
-                var fileName = Path.GetRandomFileName().Replace(".", "") + ext;
-                var filePath = Server.MapPath("~/contents/images/"+fileName); // maps virtual directory to real filesystem
-                file.SaveAs(filePath);
-            } else
+                var mime = MimeMapping.GetMimeMapping(ext);
+                if (!mime.StartsWith("image/"))
+                {
+                    ModelState.AddModelError("Image", "Resim yüklemelisiniz.");
+                }
+                else
+                {
+                    var fileName = Path.GetRandomFileName().Replace(".", "") + ext;
+                    var clientPath = "/contents/images/" + fileName;
+                    var virtualPath = "~" + clientPath;
+                    var filePath = Server.MapPath(virtualPath); // maps virtual directory to real filesystem
+                    file.SaveAs(filePath);
+
+                    var img = new Image();
+                    img.Url = clientPath;
+                    img.Alt = "";
+                    news.Image = img; // associate img with news record
+                }
+            }
+            else
             {
                 ModelState.AddModelError("Image", "Resim yüklemelisiniz.");
             }
@@ -75,10 +91,50 @@ namespace Web.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,Content,ImageId,Image,Date,Tags,Category,Slug")] News news)
+        public ActionResult Edit([Bind(Include = "Id,Title,Content,ImageId,Image,Date,Tags,Category,Slug")] News news, HttpPostedFileBase file)
         {
+            if (file != null && file.ContentLength > 0)
+            {
+                var ext = Path.GetExtension(file.FileName);
+                var mime = MimeMapping.GetMimeMapping(ext);
+                if (!mime.StartsWith("image/"))
+                {
+                    ModelState.AddModelError("Image", "Resim yüklemelisiniz.");
+                }
+                else
+                {
+                    var fileName = Path.GetRandomFileName().Replace(".", "") + ext;
+                    var clientPath = "/contents/images/" + fileName;
+                    var virtualPath = "~" + clientPath;
+                    var filePath = Server.MapPath(virtualPath); // maps virtual directory to real filesystem
+                    file.SaveAs(filePath);
+
+                    if (news.ImageId > 0)
+                    {
+                        var img = db.Images.Find(news.ImageId);
+                        img.Url = clientPath;
+                    }
+                    else
+                    {
+                        var img = new Image();
+                        img.Url = clientPath;
+                        img.Alt = "";
+                        news.Image = img; // associate img with news record 
+                    }
+
+                    // ALTERNATIVE: Creates new image record
+                    //var img = new Image();
+                    //img.Url = clientPath;
+                    //img.Alt = "";
+                    //news.Image = img; // associate img with news record
+                }
+            }
+
             if (ModelState.IsValid)
             {
+                // uncomment to save update Title field only
+                //var persistedNews = db.News.Find(news.Id);
+                //UpdateModel(persistedNews, new string[] { "Title" });
                 db.Entry(news).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
