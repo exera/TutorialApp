@@ -1,6 +1,12 @@
 ﻿@model string
 
-<header>
-    <h1>Tutorial App</h1>
-    <span>Hello, @(Model)</span>
-</header>
+<div class="blog-masthead">
+    <div class="container">
+        <nav class="blog-nav">
+            <a class="blog-nav-item @(Model == "home" ? "active" : "")" href="@Url.Action("index","home")">Anasayfa</a>
+            <a class="blog-nav-item @(Model == "news" ? "active" : "")" href="@Url.Action("index","news")">Haberler</a>
+            <a class="blog-nav-item @(Model == "contact" ? "active" : "")" href="#">İletişim</a>
+            <a class="blog-nav-item @(Model == "about" ? "active" : "")" href="#">Hakkımızda</a>
+        </nav>
+    </div>
+</div>

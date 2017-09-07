@@ -1,0 +1,16 @@
+﻿@model IList<Web.Models.News>
+
+@{
+    ViewBag.Title = "Haberler";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@foreach (var item in Model)
+{
+    <div class="blog-post">
+        <h2 class="blog-post-title">@item.Title</h2>
+        <p class="blog-post-meta">@item.Date.ToString("MMMM dd, yyyy")</p>
+        <img class="img-responsive blog-post-img" src="@item.Image.Url" alt="@item.Image.Alt" />
+        @item.Content
+    </div>
+}

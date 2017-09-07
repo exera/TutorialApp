@@ -97,9 +97,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Contents\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="Areas\Admin\Contents\css\bootstrap-tagsinput.css" />
     <Content Include="Areas\Admin\Contents\css\bootstrap.min.css" />
     <Content Include="Areas\Admin\Contents\css\index.css" />
     <Content Include="Areas\Admin\Contents\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Areas\Admin\Contents\js\bootstrap-tagsinput.min.js" />
+    <Content Include="Areas\Admin\Contents\js\moment-with-locales.js" />
+    <Content Include="Areas\Admin\Contents\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="Areas\Admin\Contents\js\views\news\edit.js" />
     <Content Include="Contents\css\bootstrap-theme.css" />
     <Content Include="Contents\css\bootstrap-theme.min.css" />
     <Content Include="Contents\css\bootstrap.css" />
@@ -112,10 +118,12 @@
     <Content Include="Contents\js\bootstrap.min.js" />
     <Content Include="Contents\js\index.js" />
     <Content Include="Contents\js\jquery-3.2.1.min.js" />
+    <Content Include="Contents\js\jquery.validate.fixed.js" />
     <Content Include="Contents\js\jquery.validate.min.js" />
     <Content Include="Contents\js\jquery.validate.unobtrusive.min.js" />
     <Content Include="Contents\js\npm.js" />
     <Content Include="Contents\js\views\student\create.js" />
+    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -127,6 +135,7 @@
     <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LookupController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\SqlController.cs" />
     <Compile Include="Migrations\201708241252592_InitialCreate.cs" />
     <Compile Include="Migrations\201708241252592_InitialCreate.Designer.cs">
@@ -212,6 +221,9 @@
     <Content Include="Areas\Admin\Contents\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Areas\Admin\Contents\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Areas\Admin\Contents\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\Shared\_PartialSidebar.cshtml" />
+    <Content Include="Views\Shared\_PartialFooter.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
