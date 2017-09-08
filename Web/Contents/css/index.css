@@ -180,3 +180,9 @@ h6, .h6 {
 .blog-post-img {
     margin-bottom: 15px;
 }
+
+.news-summary{
+    max-height: 189px;
+    overflow: hidden;
+    
+}

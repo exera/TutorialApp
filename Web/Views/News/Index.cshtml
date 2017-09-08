@@ -1,4 +1,7 @@
-﻿@model IList<Web.Models.News>
+﻿@using X.PagedList.Mvc;
+@using X.PagedList;
+@using Web.Models;
+@model IPagedList<News>
 
 @{
     ViewBag.Title = "Haberler";
@@ -8,9 +11,15 @@
 @foreach (var item in Model)
 {
     <div class="blog-post">
-        <h2 class="blog-post-title">@item.Title</h2>
+        <h2 class="blog-post-title"><a href="@Url.RouteUrl("NewsDetail",new { slug=item.Slug ?? Web.Utilities.Helper.ToSlug(item.Title),id = item.Id})">@item.Title</a></h2>
         <p class="blog-post-meta">@item.Date.ToString("MMMM dd, yyyy")</p>
         <img class="img-responsive blog-post-img" src="@item.Image.Url" alt="@item.Image.Alt" />
-        @item.Content
+        <div class="news-summary">
+            @Html.Raw(HttpUtility.HtmlDecode(item.Content))
+        </div>
+        <a href="@Url.RouteUrl("NewsDetail",new { slug=item.Slug ?? Web.Utilities.Helper.ToSlug(item.Title),id = item.Id})">Devamını oku...</a>
     </div>
 }
+
+<!-- output a paging control that lets the user navigation to the previous page, next page, etc -->
+@Html.PagedListPager(Model, page => Url.Action("index","news", new { page }))
